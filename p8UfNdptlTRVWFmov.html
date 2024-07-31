@@ -1,0 +1,169 @@
+<html><head><base href="https://websim.local/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Minha Página de Entrada</title><style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.link-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.link-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.link-card a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.link-card p {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.search-container {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#search-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #2980b9;
+}
+
+@media (max-width: 600px) {
+    .link-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style></head><body>
+    <div class="container">
+        <h1>Minha Página de Entrada</h1>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Pesquisar na web...">
+            <button id="search-button">Pesquisar</button>
+        </div>
+        
+        <div class="link-container">
+            <div class="link-card">
+                <a href="https://www.google.com">Google</a>
+                <p>Motor de busca mais popular do mundo</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.youtube.com">YouTube</a>
+                <p>Plataforma de compartilhamento de vídeos</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.facebook.com">Facebook</a>
+                <p>Rede social para conectar-se com amigos e família</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.instagram.com">Instagram</a>
+                <p>Compartilhe fotos e vídeos com seus seguidores</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.twitter.com">Twitter</a>
+                <p>Rede social para compartilhar pensamentos e notícias</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.linkedin.com">LinkedIn</a>
+                <p>Rede profissional para networking e oportunidades de carreira</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.wikipedia.org">Wikipedia</a>
+                <p>Enciclopédia online gratuita e colaborativa</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.github.com">GitHub</a>
+                <p>Plataforma de hospedagem de código e colaboração</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.x.com">X (ex-Twitter)</a>
+                <p>Plataforma de microblogs e discussões em tempo real</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.tiktok.com">TikTok</a>
+                <p>Plataforma de vídeos curtos e entretenimento</p>
+            </div>
+            <div class="link-card">
+                <a href="https://web.whatsapp.com">WhatsApp Web</a>
+                <p>Aplicativo de mensagens instantâneas e chamadas</p>
+            </div>
+            <div class="link-card">
+                <a href="https://www.messenger.com">Messenger</a>
+                <p>Plataforma de mensagens do Facebook</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('search-button').addEventListener('click', function() {
+        const searchQuery = document.getElementById('search-input').value;
+        if (searchQuery) {
+            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
+        }
+    });
+
+    document.getElementById('search-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            document.getElementById('search-button').click();
+        }
+    });
+    </script>
+</body></html>
